@@ -16,6 +16,18 @@ def pivot(arr, start, end):
 	return swap
 
 
-arr = [3, 1, 2, 5, 6]
+arr = [3, 1, 11, 23, 34, -12, -4, 8, 7, 2, 5, 6]
 print(pivot(arr, 0, len(arr)))
+print(arr)
+
+def quick_sort(arr, start, end):
+	if start < end:
+		p = pivot(arr, start, end)
+		quick_sort(arr, start, p)
+		quick_sort(arr, p + 1, end)
+	
+	return arr
+
+print("Applying quick sorting...")
+quick_sort(arr, 0, len(arr))
 print(arr)
